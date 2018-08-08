@@ -3,6 +3,7 @@ $(document).ready(function () {
     $("#searchButton").on("click", function (event) {
         event.preventDefault();
         product = $("#productInput").val().trim();
+        
         var infoArea = $("#productInfo");
 
         var product;

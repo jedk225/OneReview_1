@@ -1,7 +1,13 @@
 html {
-    background-color: gray
+    background-color: #dcdcdc;
 }
 
 body {
-    color: #fff;
+    color: black;
+}
+
+#productInfo {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
 }
