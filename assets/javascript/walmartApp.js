@@ -28,8 +28,9 @@ $(document).ready(function () {
                 productDiv.append(image);
 
                 productDiv.append("<br>" + "<br>" + results[i].name);
-                productDiv.append("<br>" + "<br>" + "$" + results[i].salePrice);
+                productDiv.append("<br>" + "<br>" + "MSRP: $" + results[i].salePrice);
                 productDiv.append("<br>" + "<br>" + results[i].shortDescription);
+                productDiv.append("<br>" + "<br>" + "Rating: " + results[i].customerRating);
                 productDiv.append("<br>" + "<br>" + "Stock: " + results[i].stock);
 
                 infoArea.append(productDiv);
