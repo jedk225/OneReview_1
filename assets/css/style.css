@@ -1,13 +1,40 @@
 html {
-    background-color: #dcdcdc;
+    background-color: #99ddff;
 }
 
 body {
     color: black;
+    padding-bottom: 17px;
+}
+
+#walmart {
+    vertical-align: top;
+    display: inline-block;
+    width: 40%;
+    margin-top: 17px;
+}
+
+#teamMemberInfo {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+    line-height: 25px;
+    background-color: white;
+    font-size: 12px;
+    position: relative;
 }
 
 #productInfo {
-    width: 80%;
+    /display: none;
+}
+
+.container {
+    vertical-align: top;
+   display: inline-block;
+   margin-left: 2%; 
+}   
+
+#whole-page {
     margin: 0 auto;
-    padding-top: 50px;
+    text-align: center; 
 }
