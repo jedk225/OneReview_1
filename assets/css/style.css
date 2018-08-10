@@ -14,12 +14,18 @@ body {
     margin-top: 17px;
 }
 
-#productInfo {
+#teamMemberInfo {
     width: 80%;
     margin: 0 auto;
     padding: 50px;
     line-height: 25px;
     background-color: white;
+    font-size: 12px;
+    position: relative;
+}
+
+#productInfo {
+    /display: none;
 }
 
 .container {
