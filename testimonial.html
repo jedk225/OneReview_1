@@ -24,49 +24,66 @@
 </head>
 
 <body>
+    <nav class="uk-navbar-container uk-margin" uk-navbar>
+        <div class="uk-navbar-left">
 
-<form>
-    <fieldset class="uk-fieldset">
+            <a class="uk-navbar-item uk-logo" href="index.html">RayRay</a>
 
-        <legend class="uk-legend">Legend</legend>
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a href="testimonial.html">
+                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                        Testimonials
+                    </a>
+                </li>
+            </ul>
 
-        <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Input">
+            <div class="uk-navbar-item">
+                <div>Some
+                    <a href="#">Link</a>
+                </div>
+            </div>
         </div>
 
-        <div class="uk-margin">
-            <select class="uk-select">
-                <option>Option 01</option>
-                <option>Option 02</option>
-            </select>
+        <div class="uk-navbar-right">
+            <div class="uk-navbar-item">
+                <form id="youTubeForm">
+                    <label for="searchItem">Search for products</label>
+                    <input class="uk-input uk-form-width-small" id="productInput" type="text" placeholder="Search Here!">
+                    <button class="uk-button uk-button-default" id="searchButton">Search</button>
+                </form>
+            </div>
         </div>
+    </nav>
 
-        <div class="uk-margin">
-            <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
-        </div>
+    <div class="uk-container">
+        <form>
+            <fieldset class="uk-fieldset">
 
-        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-            <label><input class="uk-radio" type="radio" name="radio2" checked> A</label>
-            <label><input class="uk-radio" type="radio" name="radio2"> B</label>
-        </div>
+                <legend class="uk-legend">Testimonials</legend>
 
-        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-            <label><input class="uk-checkbox" type="checkbox" checked> A</label>
-            <label><input class="uk-checkbox" type="checkbox"> B</label>
-        </div>
+                <div class="uk-margin">
+                    <label for="searchItem">Rating</label>
+                    <input class="uk-input" type="text" placeholder="5">
+                </div>
 
-        <div class="uk-margin">
-            <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">
-        </div>
+                <div class="uk-margin">
+                    <label for="searchItem">Comment</label>
+                    <textarea class="uk-textarea" rows="5" placeholder="Add your comment"></textarea>
+                </div>
 
-    </fieldset>
-</form>
+                <button class="uk-button uk-button-default" id="submit-testimonial">Submit</button>
 
-    <div id="name_"> </div>
-    <br>
-    <div id="testimonial"> </div>
+            </fieldset>
+        </form>
 
+        <br>
 
+        <div id="name_"> </div>
+        <br>
+        <div id="testimonial"> </div>
+
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
 
