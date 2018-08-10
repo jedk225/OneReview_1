@@ -1,38 +1,83 @@
+//Wait until document has fully loaded and is ready then...
 $(document).ready(function () {
 
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAL7BbZrnNciQGyHQmQYiJn215RSkwt5hY",
+        authDomain: "rayray-36a52.firebaseapp.com",
+        databaseURL: "https://rayray-36a52.firebaseio.com",
+        projectId: "rayray-36a52",
+        storageBucket: "rayray-36a52.appspot.com",
+        messagingSenderId: "456344785187"
+    };
+    firebase.initializeApp(config);
+
+    //Make a variable to hold our product info on #productInfo
+    var infoArea = $("#productInfo");
+
+    //Variable to access database
+    var database = firebase.database()
+
+    //Every time our search button is clicked...
     $("#searchButton").on("click", function (event) {
         event.preventDefault();
-        product = $("#productInput").val().trim();
-        
-        var infoArea = $("#productInfo");
 
-        var product;
+        //Take our text from our input form and put it inside of a variable called product
+        var product = $("#productInput").val().trim();;
         var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=fpa5mauqm95qpzwweykc47uv&query=" + product;
 
+        //ajax (Cleaning Supplies) Call
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
+            
+            //Console log response
             console.log(response);
+            
+            //Make a variable for our results response
             var results = response.items;
+
+            //Clear our #productInfo (every time search is clicked)
             infoArea.empty()
+
+            //Create a div for our product
             var productDiv = $("<div>");
 
+            //For every time i=0...
             for (var i = 0; i < 1; i++) {
 
-                // alert(results[i].name);
-                // alert("$" + results[i].salePrice);
+                //Get product name, price, despcription, rating, and if any stock is available
+                var name = results[i].name
+                var salePrice = results[i].salePrice
+                var shortDescription = results[i].shortDescription
+                var customerRating = results[i].customerRating
+                var stock = results[i].stock
+                var productImage = results[i].mediumImage
 
+                //Push each response onto Database
+                database.ref().push({
+                    name: name,
+                    salePrice: salePrice,
+                    shortDescription: shortDescription,
+                    customerRating: customerRating,
+                    stock: stock,
+                    productImage: productImage
+                })
+
+                //Create an image div and append the provided image to our created div (productDiv)
                 var image = $("<img>");
-                image.attr("src", results[i].mediumImage);
+                image.attr("src", productImage);
                 productDiv.append(image);
 
-                productDiv.append("<br>" + "<br>" + results[i].name);
-                productDiv.append("<br>" + "<br>" + "MSRP: $" + results[i].salePrice);
-                productDiv.append("<br>" + "<br>" + results[i].shortDescription);
-                productDiv.append("<br>" + "<br>" + "Rating: " + results[i].customerRating);
-                productDiv.append("<br>" + "<br>" + "Stock: " + results[i].stock);
+                //Append all of our information to our div (productDiv) on screen
+                productDiv.append("<br>" + "<br>" + name);
+                productDiv.append("<br>" + "<br>" + "MSRP: $" + salePrice);
+                productDiv.append("<br>" + "<br>" + shortDescription);
+                productDiv.append("<br>" + "<br>" + "Rating: " + customerRating + " Out of 5");
+                productDiv.append("<br>" + "<br>" + "Stock: " + stock);
 
+                //Append our div (productDiv) onto our infoArea (#productInfo)
                 infoArea.append(productDiv);
 
             }
@@ -40,7 +85,58 @@ $(document).ready(function () {
         })
     });
 
+    //Watch for "child_added"
+    database.ref().on("child_added", function (snapshot) {
 
+        //Here we take a snapshot and store it in a variable
+        var snapshotValue = snapshot.val();
+
+        //Console.log our values to make sure we have them correctly
+        console.log(snapshotValue.name)
+        console.log(snapshotValue.salePrice)
+        console.log(snapshotValue.shortDescription)
+        console.log(snapshotValue.customerRating)
+        console.log(snapshotValue.stock)
+        console.log(snapshotValue.productImage)
+
+
+
+
+
+
+        //     //-----------------------------------------------------------------------------------------------------------------------
+        //     //Show most recent item when page loads
+        //     //-----------------------------------------------------------------------------------------------------------------------
+
+
+
+        //     //Create a div for our product
+        //     var productDiv = $("<div>");
+
+        //     //Create an image div and append the provided image to our created div (productDiv)
+        //     var image = $("<img>");
+        //     image.attr("src", snapshotValue.productImage);
+        //     productDiv.append(image);
+
+        //     //Append all of our information to our div (productDiv) on screen
+        //     productDiv.append("<br>" + "<br>" + snapshotValue.name);
+        //     productDiv.append("<br>" + "<br>" + "MSRP: $" + snapshotValue.salePrice);
+        //     productDiv.append("<br>" + "<br>" + snapshotValue.shortDescription);
+        //     productDiv.append("<br>" + "<br>" + "Rating: " + snapshotValue.customerRating + " Out of 5");
+        //     productDiv.append("<br>" + "<br>" + "Stock: " + snapshotValue.stock);
+
+        //     //Append our div (productDiv) onto our infoArea (#productInfo)
+        //     infoArea.append(productDiv);
+
+
+
+
+
+
+        //Handles error
+    }, function (errorObject) {
+        console.log("Errors handled: " + errorObject.code)
+    })
 
 
 
