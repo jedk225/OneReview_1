@@ -31,7 +31,10 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET",
         }).then(function (response) {
-
+            
+            //Console log response
+            console.log(response);
+            
             //Make a variable for our results response
             var results = response.items;
 
