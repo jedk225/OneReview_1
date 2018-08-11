@@ -23,7 +23,7 @@ The end result is a web app that revolutionalizes the user shopping experience
 Jed - Developed the index page that displays user search results on the page utilizing the Walmart and YouTube APIs
 Lilo - Developed the testimonials page with data retention utilizing the Firebase database
 Jasmine - Developed the front-end CSS, working with the UI-Kit library
-Ray - Developed the html page for the user testimonials page. Working on future updates.
+Ray - Developed the html page for the user testimonials page. Working on future updates. Helped fix crucial JSONP bug.
 
 
 ### Improvements
