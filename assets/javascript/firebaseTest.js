@@ -1,53 +1,53 @@
-$(document).ready(function() {
-    //<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-   
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDQlfAuER5JMKPBxn9JRxhokFr2xHyhh2Y",
-        authDomain: "testimonial-fd449.firebaseapp.com",
-        databaseURL: "https://testimonial-fd449.firebaseio.com",
-        projectId: "testimonial-fd449",
-        storageBucket: "testimonial-fd449.appspot.com",
-        messagingSenderId: "884247298407"
-      };
-      firebase.initializeApp(config);
-    // add testimonial
-    var database = firebase.database();
-    $("#submit-testimonial").on("click", function (event) {
-      event.preventDefault();
-  
-      // user input is assigned to variable
-      var name = $("#name").val().trim();
-      var text = $("#text-input").val().trim();
-  
-      console.log(name);
-          console.log(text);
-  
-      var newEntry = {
-        _n: name,
-        _t: text,
-      }
-  
-      //push entry to database
-      database.ref().push(newEntry);
-  
-      //reset text input contents
-      $("#name").val("");
-      $("#text-input").val("");
+$(document).ready(function () {
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAL7BbZrnNciQGyHQmQYiJn215RSkwt5hY",
+    authDomain: "rayray-36a52.firebaseapp.com",
+    databaseURL: "https://rayray-36a52.firebaseio.com",
+    projectId: "rayray-36a52",
+    storageBucket: "rayray-36a52.appspot.com",
+    messagingSenderId: "456344785187"
+  };
+  firebase.initializeApp(config);
+
+  //Variable to hold our testimonials
+  var testimonials = $("#testimonials")
+
+  //Variable to access database
+  var database = firebase.database();
+
+  //Initial Values
+  var userRatings = "";
+  var userTestimonials = "";
+
+  //Every time our submit button is clicked...
+  $("#submitButton").on("click", function (event) {
+    event.preventDefault();
+
+    //Capture User Rating and Testimonial and put them inside td tags
+    userRatings = $("#userRating").val().trim();
+    userTestimonials = $("#userComment").val().trim();
+
+    console.log(userRatings)
+    console.log(userTestimonials)
+
+    database.ref().push({
+      userRatings: userRatings,
+      userTestimonials: userTestimonials
     });
-  
-    database.ref().on("child_added", function (childSnapshot) {
-  
-      console.log(childSnapshot.val());
-      //debugger;
-      // assign firebase variables to snapshots.
-      var _n = childSnapshot.val()._n;
-      var _t = childSnapshot.val()._t;
-  
-      // Append to virtual table
-      $("#name_").append( _n);
-      $("#testimonial").append( t);
-  
-  
-    });
+    $("#form")[0].reset();
   });
+
+  database.ref().on("child_added", function(childSnapshot){
+    var sv = childSnapshot.val()
+    
+    console.log(sv.userTestimonials)
+    console.log(sv.userRatings)
+    testimonials.prepend("<tr class='uk-card-hover'><td> " + sv.userRatings + " out of 5" +
+    " </td><td> " + sv.userTestimonials +
+      " </td><tr> ")
+  })
+  
+
+});
