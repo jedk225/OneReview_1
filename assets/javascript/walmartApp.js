@@ -45,10 +45,13 @@ $(document).ready(function () {
                 $("#error-page").show();
                 $("#whole-page").hide();
                 $("#error-page").html("<h1>" + "Error: Product not found. Please enter a valid search query" + "</h1>");
+                $("#error-page").append("<img id='lost-img' src='https://media.giphy.com/media/EV0lA5PyzwbDO/giphy.gif' />");
             } else if (product == "") {
                 $("#error-page").show();
                 $("#whole-page").hide();
                 $("#error-page").html("<h1>" + "Error: No input recognized. Please enter a valid search query" + "</h1>");
+                $("#error-page").append("<img id='empty-img' src='https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif' />")
+
             } else {
                 $("#error-page").hide();
 
@@ -65,12 +68,19 @@ $(document).ready(function () {
                 for (var i = 0; i < 1; i++) {
 
                     //Get product name, price, despcription, rating, and if any stock is available
-                    var name = results[i].name
-                    var salePrice = results[i].salePrice
-                    var shortDescription = results[i].shortDescription
-                    var customerRating = results[i].customerRating
-                    var stock = results[i].stock
-                    var productImage = results[i].mediumImage
+                    var name = results[i].name;
+                    var msrp = results[i].msrp;
+                    var salePrice = results[i].salePrice;
+                    var shortDescription = results[i].shortDescription;
+                    var customerRating = results[i].customerRating;
+                    var stock = results[i].stock;
+                    var productImage = results[i].mediumImage;
+                    var buyNow = results[i].addToCartUrl;
+
+                    var a = $('<a />');
+                    a.attr('href', buyNow);
+                    a.text("Buy Now");
+
 
                     //Push each response onto Database
                     // database.ref().push({
@@ -105,10 +115,13 @@ $(document).ready(function () {
 
                     //Append all of our information to our div (productDiv) on screen
                     productDiv.append("<br>" + "<br>" + name);
-                    productDiv.append("<br>" + "<br>" + "MSRP: $" + salePrice);
+                    productDiv.append("<br>" + "<br>" + "MSRP : $" + msrp);
+                    productDiv.append("<br>" + "Sale Price: $" + salePrice);
                     productDiv.append("<br>" + "<br>" + shortDescription);
                     productDiv.append("<br>" + "<br>" + "Rating: " + customerRating + " Out of 5");
                     productDiv.append("<br>" + "<br>" + "Stock: " + stock);
+                    productDiv.append("<br>" + "<br>").append(a);
+
 
                     //Append our div (productDiv) onto our infoArea (#productInfo)
                     infoArea.append(productDiv);
