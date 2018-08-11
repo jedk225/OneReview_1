@@ -1,40 +1,57 @@
 html {
     /* background-color: #99ddff; */
     background-image: url(../images/background.jpg);
+    background-size: 170%;
+  
 }
 
 body {
-    color: black;
     padding-bottom: 17px;
+}
+
+
+.uk-logo, .uk-logo, .testimonials, .uk-navbar-item {
+    color: black !important;
+}
+
+.uk-input, .uk-form-width-small {
+    text-align: center;
+    width: 200px !important;
+}
+
+.uk-button, .uk-button-default{
+    width: 50px !important;
+}
+
+#searchButton {
+    text-align: center;
 }
 
 #walmart {
     vertical-align: top;
     display: inline-block;
-    width: 40%;
+    width: 50%;
     margin-top: 17px;
 }
 
 #teamMemberInfo {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 50px;
     line-height: 25px;
-    background-color: white;
+    background-color: #99CCEE;
     font-size: 12px;
     position: relative;
+    display: flex;
+    flex-wrap: wrap; 
 }
 
-
-/* #productInfo {
-    display: none;
-} */
-
-.container {
-    vertical-align: top;
+#productInfo {
+   vertical-align: top;
    display: inline-block;
-   margin-left: 2%; 
-}   
+   background-color: white;
+   padding: 50px;
+}
 
 #whole-page {
     margin: 0 auto;
