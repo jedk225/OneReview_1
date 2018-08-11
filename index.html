@@ -8,6 +8,7 @@
 
     <!-- Reset CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/css/uikit.min.css" />
 
@@ -37,23 +38,32 @@
 
     <nav class="uk-navbar-container uk-margin" uk-navbar>
         <div class="uk-navbar-left">
+            
+            <a class="uk-navbar-item uk-logo " href="#">RayRay</a>
 
-            <a class="uk-navbar-item uk-logo" href="#">RayRay</a>
-
-            <ul class="uk-navbar-nav">
-                <li>
-                    <a href="#">
-                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
-                        Features
-                    </a>
-                </li>
-            </ul>
+            <div class="uk-inline">
+                    <button class="uk-button uk-button-default" type="button">INFO</button>
+                    <div uk-dropdown="pos: bottom-left">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li class="uk-active"><a href="#">Active</a></li>
+                            <li><a href="#">Item</a></li>
+                            <li class="uk-nav-header">Header</li>
+                            <li><a href="#">Item</a></li>
+                            <li><a href="#">Item</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#">Item</a></li>
+                        </ul>
+                    </div>
+                </div>
 
             <div class="uk-navbar-item">
-                <div>Some
-                    <a href="#">Link</a>
+                <div>
+                    GET THE NITTY GRITTY ON YOUR PRODUCTS
                 </div>
             </div>
+
+        
+
         </div>
 
         <div class="uk-navbar-right">
@@ -72,6 +82,7 @@
         <div id="walmart">
 
             <div id="productInfo">
+
 
                 <div id="teamMemberInfo">
 
@@ -167,6 +178,15 @@
                         </div>
                     </div>
 
+
+
+
+
+
+
+                </div>
+
+                <div id="productNotFound">
                 </div>
 
             </div>

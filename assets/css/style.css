@@ -24,9 +24,9 @@ body {
     position: relative;
 }
 
-#productInfo {
-    /display: none;
-}
+/* #productInfo { */
+    /* display: none; */
+/* } */
 
 .container {
     vertical-align: top;
