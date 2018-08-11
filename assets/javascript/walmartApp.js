@@ -1,6 +1,9 @@
 //Wait until document has fully loaded and is ready then...
 $(document).ready(function () {
 
+    $("#error-page").hide();
+
+
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyAL7BbZrnNciQGyHQmQYiJn215RSkwt5hY",
@@ -36,12 +39,18 @@ $(document).ready(function () {
 
             //Console log response
             console.log(response);
+            $("#whole-page").show();
 
             if (response.message === "Results not found!") {
-                $("#whole-page").text("Product not found. Please enter a valid search query");
+                $("#error-page").show();
+                $("#whole-page").hide();
+                $("#error-page").html("<h1>" + "Error: Product not found. Please enter a valid search query" + "</h1>");
             } else if (product == "") {
-                $("#whole-page").text("Blank! Product not found. Please enter a valid search query");
+                $("#error-page").show();
+                $("#whole-page").hide();
+                $("#error-page").html("<h1>" + "Error: No input recognized. Please enter a valid search query" + "</h1>");
             } else {
+                $("#error-page").hide();
 
                 //Make a variable for our results response
                 var results = response.items;
