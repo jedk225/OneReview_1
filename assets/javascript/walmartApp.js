@@ -28,6 +28,7 @@ $(document).ready(function () {
 
         //ajax (Cleaning Supplies) Call
         $.ajax({
+            dataType: "jsonp",
             url: queryURL,
             method: "GET",
         }).then(function (response) {
