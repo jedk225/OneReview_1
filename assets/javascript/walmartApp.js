@@ -72,11 +72,27 @@ $(document).ready(function () {
                     //     stock: stock,
                     //     productImage: productImage
                     // })
+                    var allImages = results[i].imageEntities;
+                    var newD = $("<div uk-slider >");
+                    var newPosition = $("<div class = 'uk-position-relative'>").appendTo(newD);
+                    var newContainer = $("<div class = 'uk-slider-container '>").appendTo(newPosition);
+                    var newL = $("<ul class='uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-grid'>").appendTo(newContainer);
+                   
+                    for (var index = 0; index < allImages.length; index++) {
+                        var newLi = $("<li>");
+                        var newImage = $("<img>");
+                        newLi.append(newImage);
+                        newImage.attr("src", allImages[index].mediumImage);
+                        newL.append(newLi);
+                    }
+                    var arrowLeft = $('<a class="uk-position-center-left-out uk-position-small" href="#" uk-slidenav-previous uk-slider-item="previous"></a>').appendTo(newPosition);
+                    var arrowRight = $('<a class="uk-position-center-right-out uk-position-small" href="#" uk-slidenav-next uk-slider-item="next"></a>').appendTo(newPosition);
+                    //var navDot = $(" <ul class='uk-slider-nav uk-dotnav'></ul>").appendTo(newD);
 
                     //Create an image div and append the provided image to our created div (productDiv)
                     var image = $("<img>");
                     image.attr("src", productImage);
-                    productDiv.append(image);
+                    productDiv.append(newD);
 
                     //Append all of our information to our div (productDiv) on screen
                     productDiv.append("<br>" + "<br>" + name);
