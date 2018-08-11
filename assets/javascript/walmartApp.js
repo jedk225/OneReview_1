@@ -23,7 +23,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         //Take our text from our input form and put it inside of a variable called product
-        var product = $("#productInput").val().trim();;
+        var product = $("#productInput").val().trim();
         var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=fpa5mauqm95qpzwweykc47uv&query=" + product;
 
         //ajax (Cleaning Supplies) Call
@@ -32,12 +32,15 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET",
         }).then(function (response) {
+            console.log("var product: " + product);
 
             //Console log response
             console.log(response);
 
             if (response.message === "Results not found!") {
                 $("#whole-page").text("Product not found. Please enter a valid search query");
+            } else if (product == "") {
+                $("#whole-page").text("Blank! Product not found. Please enter a valid search query");
             } else {
 
                 //Make a variable for our results response
