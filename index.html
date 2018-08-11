@@ -38,23 +38,18 @@
 
     <nav class="uk-navbar-container uk-margin" uk-navbar>
         <div class="uk-navbar-left">
-            
-            <a class="uk-navbar-item uk-logo " href="#">RayRay</a>
 
-            <div class="uk-inline">
-                    <button class="uk-button uk-button-default" type="button">INFO</button>
-                    <div uk-dropdown="pos: bottom-left">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li class="uk-active"><a href="#">Active</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li class="uk-nav-header">Header</li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">Item</a></li>
-                        </ul>
-                    </div>
-                </div>
+
+            <a class="uk-navbar-item uk-logo" href="index.html">RayRay</a>
+
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a href="testimonial.html">
+                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                        Testimonials
+                    </a>
+                </li>
+            </ul>
 
             <div class="uk-navbar-item">
                 <div>
@@ -69,7 +64,7 @@
         <div class="uk-navbar-right">
             <div class="uk-navbar-item">
                 <form id="youTubeForm">
-                    <label for="searchItem"></label>
+                    <label for="searchItem">Search for products</label>
                     <input class="uk-input uk-form-width-small" id="productInput" type="text" placeholder="Search Here!">
                     <button class="uk-button uk-button-default" id="searchButton">Search</button>
                 </form>

@@ -1,5 +1,6 @@
 html {
-    background-color: #99ddff;
+    /* background-color: #99ddff; */
+    background-image: url(../images/background.jpg);
 }
 
 body {
@@ -24,9 +25,10 @@ body {
     position: relative;
 }
 
-/* #productInfo { */
-    /* display: none; */
-/* } */
+
+/* #productInfo {
+    display: none;
+} */
 
 .container {
     vertical-align: top;
