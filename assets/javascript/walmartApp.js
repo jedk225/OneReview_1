@@ -30,7 +30,7 @@ $(document).ready(function () {
 
         //Take our text from our input form and put it inside of a variable called product
         var product = $("#productInput").val().trim();
-        var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=fpa5mauqm95qpzwweykc47uv&query=" + product;
+        var queryURL = "https://api.walmartlabs.com/v1/search?apiKey=fpa5mauqm95qpzwweykc47uv&query=" + product;
 
         //ajax (Cleaning Supplies) Call
         $.ajax({
