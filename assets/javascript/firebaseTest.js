@@ -24,7 +24,9 @@ $(document).ready(function () {
   //Every time our submit button is clicked...
   $("#submitButton").on("click", function (event) {
     event.preventDefault();
-
+    if ($("tr").length > 5){
+      $("tr:last").remove();
+    }
     //Capture User Rating and Testimonial and put them inside td tags
     userRatings = $("#userRating").val().trim();
     userTestimonials = $("#userComment").val().trim();
@@ -39,14 +41,18 @@ $(document).ready(function () {
     $("#form")[0].reset();
   });
 
-  database.ref().on("child_added", function(childSnapshot){
-    var sv = childSnapshot.val()
-    
+  database.ref().limitToLast(6).on("child_added", function(snapshot){
+    var sv = snapshot.val();
+
+    if ($("tr").length > 5){
+      $("tr:last").remove();
+    }
     console.log(sv.userTestimonials)
     console.log(sv.userRatings)
     testimonials.prepend("<tr class='uk-card-hover'><td> " + sv.userRatings + " out of 5" +
     " </td><td> " + sv.userTestimonials +
       " </td><tr> ")
+
   })
   
 
