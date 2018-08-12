@@ -70,3 +70,10 @@ body {
     text-align: center; 
 }
 
+#empty-html {
+    color: white;
+}
+
+#error-html {
+    color: white;
+}
