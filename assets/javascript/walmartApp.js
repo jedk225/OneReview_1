@@ -47,12 +47,12 @@ $(document).ready(function () {
             if (response.message === "Results not found!") {
                 $("#error-page").show();
                 $("#whole-page").hide();
-                $("#error-page").html("<h1>" + "Error: Product not found. Please enter a valid search query" + "</h1>");
+                $("#error-page").html("<h1 id='error-html'>" + "Error: Product not found. Please enter a valid search query" + "</h1>");
                 $("#error-page").append("<img id='lost-img' src='https://media.giphy.com/media/EV0lA5PyzwbDO/giphy.gif' />");
             } else if (product == "") {
                 $("#error-page").show();
                 $("#whole-page").hide();
-                $("#error-page").html("<h1>" + "Error: No input recognized. Please enter a valid search query" + "</h1>");
+                $("#error-page").html("<h1 id='empty-html'>" + "Error: No input recognized. Please enter a valid search query" + "</h1>");
                 $("#error-page").append("<img id='empty-img' src='https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif' />")
 
             } else {
