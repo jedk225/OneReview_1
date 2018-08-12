@@ -1,3 +1,5 @@
+/* INDEX.HTML */
+
 html {
     /* background-color: #99ddff; */
     background-image: url(../images/background.jpg);
@@ -7,6 +9,7 @@ html {
 
 body {
     padding-bottom: 17px;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -19,19 +22,19 @@ body {
     width: 200px !important;
 }
 
-.uk-button, .uk-button-default{
+/* .uk-button, .uk-button-default{
     width: 50px !important;
-}
+} */
 
-#searchButton {
-    text-align: center;
-}
+/* #searchButton {
+    text-align: center !important;
+} */
 
 #walmart {
     vertical-align: top;
-    display: inline-block;
-    width: 50%;
-    margin-top: 17px;
+    display: inline-block;;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 #teamMemberInfo {
@@ -40,20 +43,31 @@ body {
     padding: 50px;
     line-height: 25px;
     background-color: #99CCEE;
-    font-size: 12px;
-    position: relative;
+    font-size: 17px;
     display: flex;
     flex-wrap: wrap; 
+}
+
+#jed-description, #lilo-description, #ray-description, #jasmine-description {
+    font-style: italic;
+    font-size: 15px;
+}
+
+.uk-grid-small>* {
+    padding-left: 0px !important;
 }
 
 #productInfo {
    vertical-align: top;
    display: inline-block;
-   background-color: white;
    padding: 50px;
+   margin-right: 10%;
+  line-height: 20px;
 }
 
 #whole-page {
     margin: 0 auto;
     text-align: center; 
 }
+
+/* font-family: 'Roboto', sans-serif; */
