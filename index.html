@@ -39,7 +39,6 @@
     <nav class="uk-navbar-container uk-margin" uk-navbar>
         <div class="uk-navbar-left">
 
-
             <a class="uk-navbar-item uk-logo" href="index.html">RayRay</a>
 
             <ul class="uk-navbar-nav">
@@ -63,12 +62,11 @@
         <div class="uk-navbar-right">
             <div class="uk-navbar-item">
                 <form id="youTubeForm">
-                    <label for="searchItem">Search for products</label>
-                    <input class="uk-input uk-form-width-small" id="productInput" type="text" placeholder="Search Here!">
-                    <button class="uk-button uk-button-default" id="searchButton">Search</button>
+                    <input class="uk-input uk-form-width-small" id="productInput" type="text" placeholder="SEARCH FOR PRODUCTS">
+                    <button class="uk-button uk-button-default" id="searchButton">GO!</button>
                 </form>
             </div>
-        </div>
+        </d iv>
     </nav>
 
     <div id="error-page"></div>
@@ -79,106 +77,80 @@
 
             <div id="productInfo">
 
-
-                <div id="teamMemberInfo">
+                <div id="teamMemberInfo"> 
 
                     <!--JED-->
-                    <div class="uk-card uk-card-default uk-width-1-2@m">
+                    <div id="jed" class="uk-card uk-card-default uk-width-1-2@m">
                         <div class="uk-card-header">
                             <div class="uk-grid-small uk-flex-middle" uk-grid>
                                 <div class="uk-width-auto">
-                                    <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
+                                    <img class="uk-border-circle" width="40" height="40" src="assets/images/Jed.png">
                                 </div>
                                 <div class="uk-width-expand">
-                                    <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
-                                    <p class="uk-text-meta uk-margin-remove-top">
-                                        <time datetime="2016-04-01T19:00">April 01, 2016</time>
-                                    </p>
+                                    <h3 class="uk-card-title uk-margin-remove-bottom">Jed</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="uk-card-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                        </div>
-                        <div class="uk-card-footer">
-                            <a href="#" class="uk-button uk-button-text">Read more</a>
-                        </div>
-                    </div>
-
-                    <!--RAY-->
-                    <div class="uk-card uk-card-default uk-width-1-2@m">
-                        <div class="uk-card-header">
-                            <div class="uk-grid-small uk-flex-middle" uk-grid>
-                                <div class="uk-width-auto">
-                                    <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
-                                </div>
-                                <div class="uk-width-expand">
-                                    <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
-                                    <p class="uk-text-meta uk-margin-remove-top">
-                                        <time datetime="2016-04-01T19:00">April 01, 2016</time>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="uk-card-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                        </div>
-                        <div class="uk-card-footer">
-                            <a href="#" class="uk-button uk-button-text">Read more</a>
+                            <p>Jed works at the Apple Store because he's better than everybody.</p>
+                            <p id="jed-description">Developed the index page that displays user search results on the page utilizing the Walmart and YouTube APIs.</p>
                         </div>
                     </div>
 
                     <!--LILO-->
-                    <div class="uk-card uk-card-default uk-width-1-2@m">
+                    <div id="lilo" class="uk-card uk-card-default uk-width-1-2@m">
+                            <div class="uk-card-header">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                        <img class="uk-border-circle" width="40" height="40" src="assets/images/Lilo.png">
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h3 class="uk-card-title uk-margin-remove-bottom">Lilo</h3>
+                                    </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-card-body">
+                                <p>Lilo doesn't eat real food, he lives off of Red Bulls and $4 burritos.</p>
+                                <p id="lilo-description">Developed the testimonials page with data retention utilizing the Firebase database.</p>
+                            </div>
+                        </div>                    
+
+                    <!--RAY-->
+                    <div id="ray" class="uk-card uk-card-default uk-width-1-2@m">
                         <div class="uk-card-header">
                             <div class="uk-grid-small uk-flex-middle" uk-grid>
                                 <div class="uk-width-auto">
-                                    <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
+                                    <img class="uk-border-circle" width="40" height="40" src="assets/images/ray-ban.jpg">
                                 </div>
                                 <div class="uk-width-expand">
-                                    <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
-                                    <p class="uk-text-meta uk-margin-remove-top">
-                                        <time datetime="2016-04-01T19:00">April 01, 2016</time>
-                                    </p>
+                                    <h3 class="uk-card-title uk-margin-remove-bottom">Ray</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="uk-card-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                        </div>
-                        <div class="uk-card-footer">
-                            <a href="#" class="uk-button uk-button-text">Read more</a>
+                            <p>Ray fought over 9000 buffalos with his bare hands.</p>
+                            <p id="ray-description">Developed the html page for the user testimonials page. Working on future updates. Helped fix crucial JSONP bug.</p>
                         </div>
                     </div>
 
                     <!--JASMINE-->
-                    <div class="uk-card uk-card-default uk-width-1-2@m">
+                    <div id="jasmine" class="uk-card uk-card-default uk-width-1-2@m">
                         <div class="uk-card-header">
                             <div class="uk-grid-small uk-flex-middle" uk-grid>
                                 <div class="uk-width-auto">
-                                    <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
+                                    <img class="uk-border-circle" width="40" height="40" src="assets/images/Jasmine.jpg">
                                 </div>
                                 <div class="uk-width-expand">
-                                    <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
-                                    <p class="uk-text-meta uk-margin-remove-top">
-                                        <time datetime="2016-04-01T19:00">April 01, 2016</time>
-                                    </p>
+                                    <h3 class="uk-card-title uk-margin-remove-bottom">Jasmine</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="uk-card-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                        </div>
-                        <div class="uk-card-footer">
-                            <a href="#" class="uk-button uk-button-text">Read more</a>
+                            <p>Jasmine still listens to Hawthorne Heights and essentially has the music taste of a middle schooler.</p>
+                            <p id="jasmine-description">Developed the front-end CSS, working with the UI-Kit.</p>
                         </div>
                     </div>
-
-
-
-
-
-
 
                 </div>
 
@@ -191,10 +163,6 @@
 
 
         <div class="container">
-
-            <div id="shop-com">
-
-            </div>
 
             <br>
 

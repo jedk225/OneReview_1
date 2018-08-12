@@ -1,42 +1,72 @@
+/* INDEX.HTML */
+
 html {
-    background-color: #99ddff;
-    /* background-image: url(../images/background.jpg); */
+    /* background-color: #99ddff; */
+    background-image: url(../images/background.jpg);
+    background-size: 170%;
+  
 }
 
 body {
-    color: black;
     padding-bottom: 17px;
+    font-family: 'Roboto', sans-serif;
 }
+
+
+.uk-logo, .uk-logo, .testimonials, .uk-navbar-item {
+    color: black !important;
+}
+
+.uk-input, .uk-form-width-small {
+    text-align: center;
+    width: 200px !important;
+}
+
+/* .uk-button, .uk-button-default{
+    width: 50px !important;
+} */
+
+/* #searchButton {
+    text-align: center !important;
+} */
 
 #walmart {
     vertical-align: top;
-    display: inline-block;
-    width: 40%;
-    margin-top: 17px;
+    display: inline-block;;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 #teamMemberInfo {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 50px;
     line-height: 25px;
-    background-color: white;
-    font-size: 12px;
-    position: relative;
+    background-color: #99CCEE;
+    font-size: 17px;
+    display: flex;
+    flex-wrap: wrap; 
 }
 
+#jed-description, #lilo-description, #ray-description, #jasmine-description {
+    font-style: italic;
+    font-size: 15px;
+}
 
-/* #productInfo {
-    display: none;
-} */
+.uk-grid-small>* {
+    padding-left: 0px !important;
+}
 
-.container {
-    vertical-align: top;
+#productInfo {
+   vertical-align: top;
    display: inline-block;
-   margin-left: 2%; 
-}   
+   padding: 50px;
+   margin-right: 10%;
+  line-height: 20px;
+}
 
 #whole-page {
     margin: 0 auto;
     text-align: center; 
 }
+

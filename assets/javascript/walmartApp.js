@@ -25,6 +25,9 @@ $(document).ready(function () {
     $("#searchButton").on("click", function (event) {
         event.preventDefault();
 
+        $("#productInfo").css("background-color", "white")
+        $("#productInfo").css("margin-right", "0%")
+
         //Take our text from our input form and put it inside of a variable called product
         var product = $("#productInput").val().trim();
         var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=fpa5mauqm95qpzwweykc47uv&query=" + product;
