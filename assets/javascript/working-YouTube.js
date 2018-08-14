@@ -42,8 +42,8 @@ function createPlayer(videoID) {
   if (typeof player === "undefined") {
     player = new YT.Player('testplayer', {
       // Set Player height and width
-      height: '390',
-      width: '640',
+      height: '507',
+      width: '832',
       // Set the id of the video to be played
       videoId: videoID,
       // Setup event listeners
@@ -55,23 +55,3 @@ function createPlayer(videoID) {
   }
 
 }
-
-
-// function pauseVideo() {
-//   player.pauseVideo();
-// }
-
-// function loadNewVideo() {
-//   player.loadVideoById("me91AGSVsyo");
-// }
-
-// function stopVideo() {
-//   player.stopVideo();
-// }
-
-// function getContent() {
-//   var content
-//   content = player.INSERT_METHOD_HERE;
-//   document.getElementById('content').innerText = content
-// }
-

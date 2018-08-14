@@ -1,73 +1,23 @@
-/* INDEX.HTML */
+* {
+    box-sizing: border-box;
+}
 
 html {
-    /* background-color: #99ddff; */
     background-image: url(../images/background.jpg);
-    background-size: 170%;
+    background-size: 200%;
   
 }
 
 body {
-    padding-bottom: 17px;
     font-family: 'Roboto', sans-serif;
 }
 
-
-.uk-logo, .uk-logo, .testimonials, .uk-navbar-item {
-    color: black !important;
-}
-
-.uk-input, .uk-form-width-small {
-    text-align: center;
-    width: 200px !important;
-}
-
-/* .uk-button, .uk-button-default{
-    width: 50px !important;
-} */
-
-/* #searchButton {
-    text-align: center !important;
-} */
-
-#walmart {
-    vertical-align: top;
-    display: inline-block;;
-    margin-right: 10%;
-    margin-left: 10%;
-}
-
-#teamMemberInfo {
-    width: 100%;
-    margin: 0 auto;
+#aboutUs {
+    width: 75%;
+    margin: auto;
     padding: 50px;
     line-height: 25px;
     background-color: #99CCEE;
-    font-size: 17px;
-    display: flex;
-    flex-wrap: wrap; 
-}
-
-#jed-description, #lilo-description, #ray-description, #jasmine-description {
-    font-style: italic;
-    font-size: 15px;
-}
-
-.uk-grid-small>* {
-    padding-left: 0px !important;
-}
-
-#productInfo {
-   vertical-align: top;
-   display: inline-block;
-   padding: 50px;
-   margin-right: 10%;
-  line-height: 20px;
-}
-
-#whole-page {
-    margin: 0 auto;
-    text-align: center; 
 }
 
 #empty-html {
@@ -76,4 +26,29 @@ body {
 
 #error-html {
     color: white;
+}
+
+#whole-page {
+    padding: 20px;
+    border: 50px solid #99CCEE;
+    background-color: #ffffff;
+}
+
+.memberDescription {
+    font-style: italic;
+    font-size: 15px;
+}
+
+.teamCards {
+    margin: 0px!important;
+    padding: 0px!important;
+}
+
+.uk-input, .uk-form-width-small {
+    text-align: center;
+    width: 200px !important;
+}
+
+.uk-navbar-item {
+    color: black !important;
 }

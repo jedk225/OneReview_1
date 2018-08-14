@@ -1,7 +1,9 @@
 //Wait until document has fully loaded and is ready then...
 $(document).ready(function () {
 
+    //Hides all parts of website we don't want to see on page load
     $("#error-page").hide();
+    $("#whole-page").hide();
 
 
     // Initialize Firebase
@@ -24,9 +26,7 @@ $(document).ready(function () {
     //Every time our search button is clicked...
     $("#searchButton").on("click", function (event) {
         event.preventDefault();
-
-        $("#productInfo").css("background-color", "white")
-        $("#productInfo").css("margin-right", "0%")
+        $("#aboutUs").hide();
 
         //Take our text from our input form and put it inside of a variable called product
         var product = $("#productInput").val().trim();
@@ -44,6 +44,7 @@ $(document).ready(function () {
             console.log(response);
             $("#whole-page").show();
 
+            //Handles user input and displays correct response accordingly
             if (response.message === "Results not found!") {
                 $("#error-page").show();
                 $("#whole-page").hide();
@@ -54,7 +55,6 @@ $(document).ready(function () {
                 $("#whole-page").hide();
                 $("#error-page").html("<h1 id='empty-html'>" + "Error: No input recognized. Please enter a valid search query" + "</h1>");
                 $("#error-page").append("<img id='empty-img' src='https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif' />")
-
             } else {
                 $("#error-page").hide();
 
@@ -80,20 +80,12 @@ $(document).ready(function () {
                     var productImage = results[i].mediumImage;
                     var buyNow = results[i].addToCartUrl;
 
+                    //Generates Link to purchase item
                     var a = $('<a />');
                     a.attr('href', buyNow);
                     a.text("Buy Now");
 
-
-                    //Push each response onto Database
-                    // database.ref().push({
-                    //     name: name,
-                    //     salePrice: salePrice,
-                    //     shortDescription: shortDescription,
-                    //     customerRating: customerRating,
-                    //     stock: stock,
-                    //     productImage: productImage
-                    // })
+                    //Picture slideshow to display all result images
                     var allImages = results[i].imageEntities;
                     var newD = $("<div uk-slider >");
                     var newPosition = $("<div class = 'uk-position-relative'>").appendTo(newD);
@@ -109,7 +101,6 @@ $(document).ready(function () {
                     }
                     var arrowLeft = $('<a class="uk-position-center-left-out uk-position-small" href="#" uk-slidenav-previous uk-slider-item="previous"></a>').appendTo(newPosition);
                     var arrowRight = $('<a class="uk-position-center-right-out uk-position-small" href="#" uk-slidenav-next uk-slider-item="next"></a>').appendTo(newPosition);
-                    //var navDot = $(" <ul class='uk-slider-nav uk-dotnav'></ul>").appendTo(newD);
 
                     //Create an image div and append the provided image to our created div (productDiv)
                     var image = $("<img>");
@@ -140,61 +131,6 @@ $(document).ready(function () {
 
 
     });
-
-    // //Watch for "child_added"
-    // database.ref().on("child_added", function (snapshot) {
-
-    //     //Here we take a snapshot and store it in a variable
-    //     var snapshotValue = snapshot.val();
-
-    //     //Console.log our values to make sure we have them correctly
-    //     console.log(snapshotValue.name)
-    //     console.log(snapshotValue.salePrice)
-    //     console.log(snapshotValue.shortDescription)
-    //     console.log(snapshotValue.customerRating)
-    //     console.log(snapshotValue.stock)
-    //     console.log(snapshotValue.productImage)
-
-
-
-
-
-
-    //     //     //-----------------------------------------------------------------------------------------------------------------------
-    //     //     //Show most recent item when page loads
-    //     //     //-----------------------------------------------------------------------------------------------------------------------
-
-
-
-    //     //     //Create a div for our product
-    //     //     var productDiv = $("<div>");
-
-    //     //     //Create an image div and append the provided image to our created div (productDiv)
-    //     //     var image = $("<img>");
-    //     //     image.attr("src", snapshotValue.productImage);
-    //     //     productDiv.append(image);
-
-    //     //     //Append all of our information to our div (productDiv) on screen
-    //     //     productDiv.append("<br>" + "<br>" + snapshotValue.name);
-    //     //     productDiv.append("<br>" + "<br>" + "MSRP: $" + snapshotValue.salePrice);
-    //     //     productDiv.append("<br>" + "<br>" + snapshotValue.shortDescription);
-    //     //     productDiv.append("<br>" + "<br>" + "Rating: " + snapshotValue.customerRating + " Out of 5");
-    //     //     productDiv.append("<br>" + "<br>" + "Stock: " + snapshotValue.stock);
-
-    //     //     //Append our div (productDiv) onto our infoArea (#productInfo)
-    //     //     infoArea.append(productDiv);
-
-
-
-
-
-
-    //     //Handles error
-    // }, function (errorObject) {
-    //     console.log("Errors handled: " + errorObject.code)
-    // })
-
-
 
 
 });

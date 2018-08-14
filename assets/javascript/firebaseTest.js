@@ -1,3 +1,4 @@
+//When page is done loading...
 $(document).ready(function () {
 
   // Initialize Firebase
@@ -24,36 +25,40 @@ $(document).ready(function () {
   //Every time our submit button is clicked...
   $("#submitButton").on("click", function (event) {
     event.preventDefault();
-    if ($("tr").length > 5){
+    
+    //If table has more than 5 rows, remove one
+    if ($("tr").length > 5) {
       $("tr:last").remove();
     }
     //Capture User Rating and Testimonial and put them inside td tags
     userRatings = $("#userRating").val().trim();
     userTestimonials = $("#userComment").val().trim();
 
-    console.log(userRatings)
-    console.log(userTestimonials)
-
+    //Pushes user info into firebase
     database.ref().push({
       userRatings: userRatings,
       userTestimonials: userTestimonials
     });
+
+    //Empties form after click
     $("#form")[0].reset();
   });
 
-  database.ref().limitToLast(6).on("child_added", function(snapshot){
+  //Creates a snapshot and pulls the last 6 items
+    database.ref().limitToLast(6).on("child_added", function (snapshot) {
     var sv = snapshot.val();
 
-    if ($("tr").length > 5){
+    //If table has more than 5 rows, remove one
+    if ($("tr").length > 5) {
       $("tr:last").remove();
     }
-    console.log(sv.userTestimonials)
-    console.log(sv.userRatings)
+
+    //Add testimonials into website
     testimonials.prepend("<tr class='uk-card-hover'><td> " + sv.userRatings + " out of 5" +
-    " </td><td> " + sv.userTestimonials +
+      " </td><td> " + sv.userTestimonials +
       " </td><tr> ")
 
   })
-  
+
 
 });
