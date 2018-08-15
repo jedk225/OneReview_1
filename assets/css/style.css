@@ -16,8 +16,12 @@ body {
     width: 75%;
     margin: auto;
     padding: 50px;
-    line-height: 25px;
+    line-height: 20px;
     background-color: #99CCEE;
+}
+
+#productInfo{
+    line-height: 20px;
 }
 
 #empty-html {
@@ -51,4 +55,8 @@ body {
 
 .uk-navbar-item {
     color: black !important;
+}
+
+.uk-active {
+   text-align: center;
 }
