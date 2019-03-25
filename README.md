@@ -1,5 +1,5 @@
-# SuperDuperAmazingSpectacular
-(superduperspectacular)x1000000
+# OneReview
+Web app that simplifies the online shopping experience by giving users essential information regarding their product search and also provides an additional review video source from YouTube
 
 ## MVP
 We are building a web app that utilized the Walmart and YouTube APIs to provide shoppers with a seamless product research experience.
